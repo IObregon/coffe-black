@@ -1,5 +1,14 @@
 <template>
-  <v-app id="app">
+  <v-app>
+    <v-toolbar app fixed>
+      <v-toolbar-side-icon></v-toolbar-side-icon>
+      <v-toolbar-title>Browse</v-toolbar-title>
+    </v-toolbar>
+    <main>
+      <v-content>
+        <router-view></router-view>
+    </v-content>
+    </main>
   </v-app>
 </template>
 
@@ -8,6 +17,3 @@ export default {
   name: 'app'
 }
 </script>
-
-<style>
-</style>

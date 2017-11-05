@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Grid from '../components/Grid'
+import Detail from '../components/Detail'
 
 Vue.use(Router)
 
@@ -8,8 +9,14 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: HelloWorld
+      name: 'grid',
+      component: Grid
+    },
+    {
+      path: '/:id',
+      name: 'detail',
+      component: Detail,
+      props: true
     }
   ]
 })

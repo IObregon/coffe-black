@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app dark>
     <v-toolbar app fixed>
       <v-toolbar-side-icon></v-toolbar-side-icon>
       <v-toolbar-title>Browse</v-toolbar-title>

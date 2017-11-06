@@ -1,11 +1,14 @@
 <template>
-<v-container fluid :grid-list-lg="true">
-  <v-layout row wrap>
-    <v-flex v-for="it in 6" :key="it" xs6 sm4 md2 xl1>
-      <v-card :to="{ name: 'detail', params: { id: it } }">
-        <v-card-media src="http://via.placeholder.com/200x250" height="250px"/>
+<v-container fluid :grid-list-lg="true" :fill-height="loading">
+  <v-layout v-if="laoding" justify-center align-center>
+    <v-progress-circular indeterminate color="primary"></v-progress-circular>
+  </v-layout>
+  <v-layout v-else row wrap>
+    <v-flex v-for="it in items" :key="it.id" xs6 sm4 md2 xl1>
+      <v-card :to="{ name: 'detail', params: { id: it.id } }">
+        <v-card-media :src="`https://image.tmdb.org/t/p/w500${it.poster_path}`" height="250px"/>
         <v-card-text>
-          Nunc porttitor ex id est pellentesque, ornare scelerisque magna.
+          <strong>{{ it.name }}</strong>
         </v-card-text>
       </v-card>
     </v-flex>
@@ -14,8 +17,30 @@
 </template>
 
 <script>
+const API_URL = 'https://api.themoviedb.org/3/tv/top_rated?api_key=f7698770439320b65427198b343fad6f&language=e'
+
 export default {
-  name: 'Grid'
+  name: 'Grid',
+  data: function () {
+    return {
+      loading: true,
+      items: []
+    }
+  },
+  mounted: function () {
+    var that = this
+    fetch(`${API_URL}`)
+      .then(res => {
+        return res.json()
+      })
+      .then(function (json) {
+        if (json.results.length > 0) {
+          console.log(json.results)
+          that.loading = false
+          that.items = json.results
+        }
+      })
+  }
 }
 </script>
 

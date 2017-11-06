@@ -5,7 +5,13 @@
       <v-card-title primary-title>
         <h3>Detail {{ id }}</h3>
         <p>
-          {{ `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget est sapien. Proin varius vel ex quis fermentum. Praesent eget hendrerit nibh, at egestas quam. Morbi vel nisi vitae ex ultricies congue non sit amet tellus. Donec quis felis nulla. Morbi lorem magna, aliquet nec eleifend a, sollicitudin vel ipsum. Maecenas interdum leo nec diam placerat varius.` }}
+          {{ `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Nunc eget est sapien. Proin varius vel ex quis fermentum.
+            Praesent eget hendrerit nibh, at egestas quam. Morbi vel nisi
+            vitae ex ultricies congue non sit amet tellus. Donec quis
+            felis nulla. Morbi lorem magna, aliquet nec eleifend a,
+            sollicitudin vel ipsum. Maecenas interdum leo nec diam
+            placerat varius.` }}
         </p>
       </v-card-title>
     </v-card>
@@ -18,3 +24,9 @@ export default {
   props: ['id']
 }
 </script>
+
+<style>
+.container {
+  padding: 16px;
+}
+</style>

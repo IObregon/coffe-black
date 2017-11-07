@@ -1,21 +1,16 @@
 <template>
   <v-app dark>
-    <toolbar/>
+    <router-view name="toolbar"></router-view>
     <main>
       <v-content>
         <router-view></router-view>
-    </v-content>
+      </v-content>
     </main>
   </v-app>
 </template>
 
 <script>
-import Toolbar from './components/Toolbar'
-
 export default {
-  name: 'App',
-  components: {
-    Toolbar
-  }
+  name: 'App'
 }
 </script>

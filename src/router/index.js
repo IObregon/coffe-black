@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Toolbar from '../components/Toolbar'
 import Grid from '../components/Grid'
 import Detail from '../components/Detail'
 
@@ -10,13 +11,20 @@ export default new Router({
     {
       path: '/',
       name: 'grid',
-      component: Grid
+      components: {
+        default: Grid,
+        toolbar: Toolbar
+      },
+      props: {default: false, toolbar: true}
     },
     {
       path: '/:id',
       name: 'detail',
-      component: Detail,
-      props: true
+      components: {
+        default: Detail,
+        toolbar: Toolbar
+      },
+      props: {default: true, toolbar: true}
     }
   ]
 })

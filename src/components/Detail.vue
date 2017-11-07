@@ -44,7 +44,11 @@ export default {
       var that = this
       fetch(`${API_URL}${id}?api_key=f7698770439320b65427198b343fad6f`)
         .then(res => {
-          return res.json()
+          if (!res.ok) {
+            this.$router.push({name: 'grid'})
+          } else {
+            return res.json()
+          }
         })
         .then(json => {
           that.loading = false

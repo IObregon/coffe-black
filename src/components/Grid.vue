@@ -14,9 +14,6 @@
           v-else
           src="http://via.placeholder.com/200x250"
           height="250px"/>
-        <v-card-text>
-          <strong>{{ it.name }}</strong>
-        </v-card-text>
       </v-card>
     </v-flex>
   </v-layout>

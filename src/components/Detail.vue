@@ -28,16 +28,24 @@ export default {
     }
   },
   mounted: function () {
-    var that = this
-    fetch(`${API_URL}${this.id}?api_key=f7698770439320b65427198b343fad6f`)
-      .then(res => {
-        return res.json()
-      })
-      .then(json => {
-        console.log(json)
-        that.loading = false
-        that.item = json
-      })
+    this.fetchTvDetail(this.id)
+  },
+  beforeRouteUpdate: function (to, from, next) {
+    this.fetchTvDetail(to.params.id)
+    next()
+  },
+  methods: {
+    fetchTvDetail: function (id) {
+      var that = this
+      fetch(`${API_URL}${id}?api_key=f7698770439320b65427198b343fad6f`)
+        .then(res => {
+          return res.json()
+        })
+        .then(json => {
+          that.loading = false
+          that.item = json
+        })
+    }
   }
 }
 </script>

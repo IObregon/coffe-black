@@ -6,7 +6,14 @@
   <v-layout v-else row wrap>
     <v-flex v-for="it in items" :key="it.id" xs6 sm4 md2 xl1>
       <v-card :to="{ name: 'detail', params: { id: it.id } }">
-        <v-card-media :src="`https://image.tmdb.org/t/p/w500${it.poster_path}`" height="250px"/>
+        <v-card-media
+          v-if="it.poster_path"
+          :src="`https://image.tmdb.org/t/p/w500${it.poster_path}`"
+          height="250px"/>
+        <v-card-media
+          v-else
+          src="http://via.placeholder.com/200x250"
+          height="250px"/>
         <v-card-text>
           <strong>{{ it.name }}</strong>
         </v-card-text>

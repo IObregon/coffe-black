@@ -42,7 +42,6 @@ export default {
       })
       .then(function (json) {
         if (json.results.length > 0) {
-          console.log(json.results)
           that.loading = false
           that.items = json.results
         }

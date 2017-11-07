@@ -13,7 +13,7 @@ export default {
   name: 'Toolbar',
   props: ['id'],
   methods: {
-    histBack: function () {
+    histBack () {
       if (this.id) {
         this.$router.push({name: 'grid'})
       }

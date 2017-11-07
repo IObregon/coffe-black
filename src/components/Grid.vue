@@ -25,13 +25,13 @@ const API_URL = 'https://api.themoviedb.org/3/tv/top_rated?api_key=f769877043932
 
 export default {
   name: 'Grid',
-  data: function () {
+  data () {
     return {
       loading: true,
       items: []
     }
   },
-  mounted: function () {
+  mounted () {
     var that = this
     fetch(`${API_URL}`)
       .then(res => {

@@ -28,21 +28,21 @@ const API_URL = 'https://api.themoviedb.org/3/tv/'
 export default {
   name: 'Detail',
   props: ['id'],
-  data: function () {
+  data () {
     return {
       loading: true,
       item: null
     }
   },
-  mounted: function () {
+  mounted () {
     this.fetchTvDetail(this.id)
   },
-  beforeRouteUpdate: function (to, from, next) {
+  beforeRouteUpdate (to, from, next) {
     this.fetchTvDetail(to.params.id)
     next()
   },
   methods: {
-    fetchTvDetail: function (id) {
+    fetchTvDetail (id) {
       var that = this
       fetch(`${API_URL}${id}?api_key=f7698770439320b65427198b343fad6f`)
         .then(res => {
@@ -60,9 +60,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.container {
-  padding: 16px;
-}
-</style>

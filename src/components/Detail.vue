@@ -1,6 +1,6 @@
 <template>
   <v-container fluid :fill-height="loading">
-    <v-layout v-if="laoding" justify-center align-center>
+    <v-layout v-if="loading" justify-center align-center>
       <v-progress-circular indeterminate color="primary"></v-progress-circular>
     </v-layout>
       <v-card v-else>

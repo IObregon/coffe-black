@@ -18,6 +18,8 @@
           {{ genre.name }}
         </v-chip>
       </div>
+      <p>Seasons: {{ show.number_of_seasons }}</p>
+      <p>Episode: {{ show.number_of_episodes }}</p>
     </v-container>
   </section>
 </template>

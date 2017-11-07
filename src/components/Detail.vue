@@ -5,8 +5,13 @@
     </v-layout>
       <v-card v-else>
         <v-card-media
+          v-if="item.backdrop_path"
           :src="`https://image.tmdb.org/t/p/w500${item.backdrop_path}`"
           height="250px" />
+          <v-card-media
+            v-else
+            src="http://via.placeholder.com/400x250"
+            height="250px" />
         <v-card-title primary-title>
           <h3>{{ item.name }}</h3>
           <p>{{ item.overview }}</p>

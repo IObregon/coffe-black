@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Toolbar from '../components/Toolbar'
-import GridPage from '../components/GridPage'
+import HomePage from '../components/HomePage'
 import DetailPage from '../components/DetailPage'
 
 Vue.use(Router)
@@ -12,7 +12,7 @@ export default new Router({
       path: '/',
       name: 'grid',
       components: {
-        default: GridPage,
+        default: HomePage,
         toolbar: Toolbar
       },
       props: {default: false, toolbar: true}

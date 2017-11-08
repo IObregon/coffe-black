@@ -24,7 +24,7 @@
 const API_URL = 'https://api.themoviedb.org/3/tv/popular?api_key=f7698770439320b65427198b343fad6f&language=e'
 
 export default {
-  name: 'GridPage',
+  name: 'HomePage',
   data () {
     return {
       loading: true,

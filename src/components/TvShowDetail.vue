@@ -11,15 +11,25 @@
         height="250px" />
     </v-card>
     <v-container fluid>
-      <h5>{{ show.first_air_date }}</h5>
       <p>{{ show.overview }}</p>
-      <div class="text-xs-left">
-        <v-chip outline color="green accent-2" v-for="genre in show.genres" :key="genre.id">
-          {{ genre.name }}
-        </v-chip>
-      </div>
-      <p>Seasons: {{ show.number_of_seasons }}</p>
-      <p>Episode: {{ show.number_of_episodes }}</p>
+      <v-layout row>
+        <v-flex xs4 class="text-xs-center">
+          <p class="data green--text text--accent-2">Date <strong>{{ show.first_air_date }}</strong></p>
+        </v-flex>
+        <v-flex xs4 class="text-xs-center">
+          <p class="data green--text text--accent-2">Seasons <strong>{{ show.number_of_seasons }}</strong></p>
+        </v-flex>
+        <v-flex xs4 class="text-xs-center">
+          <p class="data green--text text--accent-2">Episodes <strong>{{ show.number_of_episodes }}</strong></p>
+        </v-flex>
+      </v-layout>
+      <v-layout row>
+        <v-flex xs12 class="text-xs-left">
+          <v-chip outline color="grey lighten-4" v-for="genre in show.genres" :key="genre.id">
+            {{ genre.name }}
+          </v-chip>
+        </v-flex>
+      </v-layout>
     </v-container>
   </section>
 </template>
@@ -30,3 +40,9 @@ export default {
   props: ['show']
 }
 </script>
+
+<style scoped>
+.data strong {
+  display: block;
+}
+</style>

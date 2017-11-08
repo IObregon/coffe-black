@@ -15,7 +15,7 @@ import TvShowDetail from './TvShowDetail'
 const API_URL = 'https://api.themoviedb.org/3/tv/'
 
 export default {
-  name: 'Detail',
+  name: 'DetailPage',
   props: ['id'],
   components: {
     TvShowDetail

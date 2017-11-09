@@ -1,13 +1,13 @@
 <template>
   <v-layout row>
-    <v-flex xs12>
+    <v-flex xs12 justify-end align-end>
       <v-card v-if="!id" class="card--flex-toolbar">
         <v-card-media
           src="https://image.tmdb.org/t/p/w500/h1qyblc5p9G3ZWIVK8ZrkpxcXgO.jpg"
           height="320px">
-          <v-container fill-height fluid>
-            <v-layout fill-height>
-              <v-flex xs12 align-start justify-end flexbox>
+          <v-container fluid>
+            <v-layout>
+              <v-flex>
                 <v-chip color="red accent-3" text-color="white">New Chapter</v-chip>
                 <h3>The Walking Dead</h3>
                 <p>Season 1, Episode 4</p>
@@ -22,6 +22,10 @@
           <v-icon v-else color="red accent-3">menu</v-icon>
         </v-toolbar-side-icon>
         <v-toolbar-title></v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-btn icon>
+          <v-icon color="red accent-3">search</v-icon>
+        </v-btn icon>
       </v-toolbar>
     </v-flex>
   </v-layout>

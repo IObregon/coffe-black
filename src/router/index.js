@@ -15,7 +15,7 @@ export default new Router({
         default: HomePage,
         toolbar: Toolbar
       },
-      props: {default: false, toolbar: true}
+      props: {default: false, toolbar: (route) => ({ path: route.path })}
     },
     {
       path: '/:id',
@@ -24,7 +24,7 @@ export default new Router({
         default: DetailPage,
         toolbar: Toolbar
       },
-      props: {default: true, toolbar: true}
+      props: {default: true, toolbar: (route) => ({ path: route.path })}
     }
   ]
 })

@@ -1,7 +1,7 @@
 <template>
   <v-layout row>
     <v-flex xs12 justify-end align-end>
-      <v-card v-if="!id" class="card--flex-toolbar">
+      <v-card v-if="path === '/'" class="card--flex-toolbar">
         <v-card-media
           src="https://image.tmdb.org/t/p/w500/h1qyblc5p9G3ZWIVK8ZrkpxcXgO.jpg"
           height="320px">
@@ -18,8 +18,8 @@
       </v-card>
       <v-toolbar fixed flat>
         <v-toolbar-side-icon @click="histBack">
-          <v-icon v-if="id" color="red accent-3">keyboard_backspace</v-icon>
-          <v-icon v-else color="red accent-3">menu</v-icon>
+          <v-icon v-if="path === '/'" color="red accent-3">menu</v-icon>
+          <v-icon v-else color="red accent-3">keyboard_backspace</v-icon>
         </v-toolbar-side-icon>
         <v-toolbar-title></v-toolbar-title>
         <v-spacer></v-spacer>
@@ -34,10 +34,10 @@
 <script>
 export default {
   name: 'Toolbar',
-  props: ['id'],
+  props: ['path'],
   methods: {
     histBack () {
-      if (this.id) {
+      if (this.path !== '/') {
         this.$router.push({name: 'grid'})
       }
     }

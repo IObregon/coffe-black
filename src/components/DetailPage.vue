@@ -26,7 +26,7 @@ export default {
       item: null
     }
   },
-  mounted () {
+  created () {
     this.fetchTvDetail(this.id)
   },
   beforeRouteUpdate (to, from, next) {

@@ -11,7 +11,12 @@
         height="250px" />
     </v-card>
     <v-container fluid>
-      <p>{{ show.overview }}</p>
+      <v-layout row>
+        <v-flex xs12>
+          <h4>Overview</h4>
+          <p>{{ show.overview }}</p>
+        </v-flex>
+      </v-layout>
       <v-layout row>
         <v-flex xs4 class="text-xs-center">
           <p class="data green--text text--accent-2">Date <strong>{{ show.first_air_date }}</strong></p>

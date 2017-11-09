@@ -4,12 +4,12 @@
     <v-progress-circular indeterminate color="primary"></v-progress-circular>
   </v-layout>
   <v-layout v-else row wrap>
-    <v-flex v-for="it in items" :key="it.id" xs6 sm4 md2 xl1>
+    <v-flex v-for="it in items" :key="it.id" xs4 sm4 md2 xl1>
       <v-card :to="{ name: 'detail', params: { id: it.id } }">
         <v-card-media
           v-if="it.poster_path"
           :src="`https://image.tmdb.org/t/p/w500${it.poster_path}`"
-          height="250px"/>
+          height="140px"/>
         <v-card-media
           v-else
           src="http://via.placeholder.com/200x250"

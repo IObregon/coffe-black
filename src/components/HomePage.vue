@@ -31,18 +31,23 @@ export default {
       items: []
     }
   },
-  mounted () {
-    var that = this
-    fetch(`${API_URL}`)
-      .then(res => {
-        return res.json()
-      })
-      .then(function (json) {
-        if (json.results.length > 0) {
-          that.loading = false
-          that.items = json.results
-        }
-      })
+  created () {
+    this.fetchData()
+  },
+  methods: {
+    fetchData () {
+      const that = this
+      fetch(`${API_URL}`)
+        .then(res => {
+          return res.json()
+        })
+        .then(function (json) {
+          if (json.results.length > 0) {
+            that.loading = false
+            that.items = json.results
+          }
+        })
+    }
   }
 }
 </script>

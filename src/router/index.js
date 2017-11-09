@@ -6,6 +6,8 @@ import DetailPage from '../components/DetailPage'
 
 Vue.use(Router)
 
+const passPathProperty = (route) => ({ path: route.path })
+
 export default new Router({
   routes: [
     {
@@ -15,7 +17,7 @@ export default new Router({
         default: HomePage,
         toolbar: Toolbar
       },
-      props: {default: false, toolbar: (route) => ({ path: route.path })}
+      props: {default: false, toolbar: passPathProperty}
     },
     {
       path: '/:id',
@@ -24,7 +26,7 @@ export default new Router({
         default: DetailPage,
         toolbar: Toolbar
       },
-      props: {default: true, toolbar: (route) => ({ path: route.path })}
+      props: {default: true, toolbar: passPathProperty}
     }
   ]
 })

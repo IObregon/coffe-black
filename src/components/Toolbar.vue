@@ -17,9 +17,11 @@
         </v-card-media>
       </v-card>
       <v-toolbar fixed flat>
-        <v-toolbar-side-icon @click="histBack">
-          <v-icon v-if="path === '/'" color="red accent-3">menu</v-icon>
-          <v-icon v-else color="red accent-3">keyboard_backspace</v-icon>
+        <v-toolbar-side-icon v-if="path === '/'">
+          <v-icon color="red accent-3">menu</v-icon>
+        </v-toolbar-side-icon>
+        <v-toolbar-side-icon v-else @click="histBack">
+          <v-icon color="red accent-3">keyboard_backspace</v-icon>
         </v-toolbar-side-icon>
         <v-toolbar-title></v-toolbar-title>
         <v-spacer></v-spacer>

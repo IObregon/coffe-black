@@ -26,7 +26,7 @@ export default {
         res.json()
       ))
       .then(json => {
-        this.$store.commit('setPopularItems', json.results)
+        this.$store.commit('setPopularItems', json.results.slice(0, 18))
       })
     }
   }

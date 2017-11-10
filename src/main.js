@@ -1,11 +1,11 @@
 import Vue from 'vue'
-import store from './store'
 
 import Vuetify from 'vuetify'
 import '../node_modules/vuetify/dist/vuetify.min.css'
 
-import App from './App'
 import router from './router'
+import store from './store'
+import App from './App'
 
 Vue.use(Vuetify)
 

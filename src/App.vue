@@ -1,11 +1,6 @@
 <template>
   <v-app dark>
-    <router-view name="toolbar"></router-view>
-    <main>
-      <v-content>
-        <router-view></router-view>
-      </v-content>
-    </main>
+    <router-view></router-view>
   </v-app>
 </template>
 

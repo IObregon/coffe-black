@@ -4,7 +4,8 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const initialState = {
-  popularItems: []
+  popularItems: [],
+  currentItem: null
 }
 
 export default new Vuex.Store({
@@ -15,6 +16,11 @@ export default new Vuex.Store({
         ...state.popularItems,
         ...items
       ]
+    },
+    setCurrentItem (state, item) {
+      console.log(item)
+      state.currentItem = Object.assign({},
+        state.currentItem, item)
     }
   }
 })

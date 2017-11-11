@@ -28,7 +28,10 @@ export default {
         res.json()
       ))
       .then(item => {
-        this.$store.commit(SET_CURRENT_ITEM, item)
+        this.$store.commit({
+          type: SET_CURRENT_ITEM,
+          item: item
+        })
       })
     }
   }

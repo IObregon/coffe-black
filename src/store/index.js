@@ -13,15 +13,15 @@ const initialState = {
 export default new Vuex.Store({
   state: initialState,
   mutations: {
-    [LOAD_POPULAR_ITEMS] (state, items) {
+    [LOAD_POPULAR_ITEMS] (state, payload) {
       state.popularItems = [
         ...state.popularItems,
-        ...items
+        ...payload.items
       ]
     },
-    [SET_CURRENT_ITEM] (state, item) {
+    [SET_CURRENT_ITEM] (state, payload) {
       state.currentItem = Object.assign({},
-        state.currentItem, item)
+        state.currentItem, payload.item)
     }
   }
 })

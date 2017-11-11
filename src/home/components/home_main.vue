@@ -29,7 +29,10 @@ export default {
         res.json()
       ))
       .then(json => {
-        this.$store.commit(LOAD_POPULAR_ITEMS, json.results.slice(0, 18))
+        this.$store.commit({
+          type: LOAD_POPULAR_ITEMS,
+          items: json.results.slice(0, 18)
+        })
       })
     }
   }

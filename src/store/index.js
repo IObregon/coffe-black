@@ -21,10 +21,10 @@ export default new Vuex.Store({
     },
     [SET_CURRENT_ITEM] (state, payload) {
       if (!payload.item) {
-        state.currentItem = {}
+        state.currentItem = null
       } else {
         state.currentItem = Object.assign({},
-          state.currentItem, payload.item)
+          payload.item)
       }
     }
   }

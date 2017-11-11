@@ -1,8 +1,10 @@
 <template>
-  <grid v-if="items.length > 0" :items="items"></grid>
+  <grid v-if="popularItems.length > 0" :items="popularItems"></grid>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 import {
   LOAD_POPULAR_ITEMS,
   CLEAR_CURRENT_ITEM
@@ -15,16 +17,12 @@ export default {
   components: {
     Grid
   },
-  computed: {
-    items () {
-      return this.$store.state.popularItems
-    }
-  },
+  computed: mapState(['popularItems']),
   created () {
     this.$store.commit({
       type: CLEAR_CURRENT_ITEM
     })
-    if (this.items.length === 0) {
+    if (this.popularItems.length === 0) {
       this.getPopularItems()
     }
   },

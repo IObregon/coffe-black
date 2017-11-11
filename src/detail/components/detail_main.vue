@@ -1,11 +1,13 @@
 <template>
   <profile
-    v-if="item"
-    :item="item"
+    v-if="currentItem"
+    :item="currentItem"
     @histBack="histBack"></profile>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 import { SET_CURRENT_ITEM } from '../../store/mutation-types.js'
 import Profile from './profile'
 import Service from '../service/detail_service'
@@ -16,11 +18,7 @@ export default {
   components: {
     Profile
   },
-  computed: {
-    item () {
-      return this.$store.state.currentItem
-    }
-  },
+  computed: mapState(['currentItem']),
   beforeRouteUpdate (to, from, next) {
     this.getItem(to.params.id)
     next()

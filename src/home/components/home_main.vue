@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import { LOAD_POPULAR_ITEMS } from '../../store/mutation-types.js'
 import Grid from './grid'
 import Service from '../services/home_service'
 
@@ -26,7 +27,7 @@ export default {
         res.json()
       ))
       .then(json => {
-        this.$store.commit('setPopularItems', json.results.slice(0, 18))
+        this.$store.commit(LOAD_POPULAR_ITEMS, json.results.slice(0, 18))
       })
     }
   }

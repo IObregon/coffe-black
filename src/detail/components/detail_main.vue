@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import { SET_CURRENT_ITEM } from '../../store/mutation-types.js'
 import Profile from './profile'
 import Service from '../service/detail_service'
 
@@ -27,7 +28,7 @@ export default {
         res.json()
       ))
       .then(json => {
-        this.$store.commit('setCurrentItem', json)
+        this.$store.commit(SET_CURRENT_ITEM, json)
       })
     }
   }

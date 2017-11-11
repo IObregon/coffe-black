@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import { LOAD_POPULAR_ITEMS, SET_CURRENT_ITEM } from './mutation-types.js'
+
 Vue.use(Vuex)
 
 const initialState = {
@@ -11,13 +13,13 @@ const initialState = {
 export default new Vuex.Store({
   state: initialState,
   mutations: {
-    setPopularItems (state, items) {
+    [LOAD_POPULAR_ITEMS] (state, items) {
       state.popularItems = [
         ...state.popularItems,
         ...items
       ]
     },
-    setCurrentItem (state, item) {
+    [SET_CURRENT_ITEM] (state, item) {
       state.currentItem = Object.assign({},
         state.currentItem, item)
     }

@@ -21,12 +21,6 @@ export default {
       return this.$store.state.currentItem
     }
   },
-  beforeCreate () {
-    this.$store.commit({
-      type: SET_CURRENT_ITEM,
-      item: null
-    })
-  },
   beforeRouteUpdate (to, from, next) {
     this.getItem(to.params.id)
     next()

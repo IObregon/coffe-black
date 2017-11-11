@@ -1,7 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import { LOAD_POPULAR_ITEMS, SET_CURRENT_ITEM } from './mutation-types.js'
+import {
+  LOAD_POPULAR_ITEMS,
+  SET_CURRENT_ITEM,
+  CLEAR_CURRENT_ITEM
+} from './mutation-types.js'
 
 Vue.use(Vuex)
 
@@ -20,12 +24,13 @@ export default new Vuex.Store({
       ]
     },
     [SET_CURRENT_ITEM] (state, payload) {
-      if (!payload.item) {
-        state.currentItem = null
-      } else {
+      if (payload.item) {
         state.currentItem = Object.assign({},
           payload.item)
       }
+    },
+    [CLEAR_CURRENT_ITEM] (state) {
+      state.currentItem = null
     }
   }
 })

@@ -3,7 +3,10 @@
 </template>
 
 <script>
-import { LOAD_POPULAR_ITEMS } from '../../store/mutation-types.js'
+import {
+  LOAD_POPULAR_ITEMS,
+  CLEAR_CURRENT_ITEM
+} from '../../store/mutation-types.js'
 import Grid from './grid'
 import Service from '../service/home_service'
 
@@ -18,6 +21,9 @@ export default {
     }
   },
   created () {
+    this.$store.commit({
+      type: CLEAR_CURRENT_ITEM
+    })
     if (this.items.length === 0) {
       this.getPopularItems()
     }

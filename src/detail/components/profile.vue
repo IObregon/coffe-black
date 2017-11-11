@@ -10,7 +10,13 @@
       <v-flex xs12>
         <v-card>
           <v-card-media
+            v-if="item.backdrop_path"
             :src="`https://image.tmdb.org/t/p/w500${item.backdrop_path}`"
+            height="250px">
+          </v-card-media>
+          <v-card-media
+            v-else
+            src="http://via.placeholder.com/450x250"
             height="250px">
           </v-card-media>
         </v-card>

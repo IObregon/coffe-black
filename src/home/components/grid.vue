@@ -8,6 +8,11 @@
             :src="`https://image.tmdb.org/t/p/w500${item.poster_path}`"
             height="200"/>
           </v-card-media>
+          <v-card-media
+            v-else
+            src="http://via.placeholder.com/450x250"
+            height="200"/>
+          </v-card-media>
         </v-card>
       </v-flex>
     </v-layout>

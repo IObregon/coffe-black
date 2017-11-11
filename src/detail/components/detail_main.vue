@@ -27,12 +27,16 @@ export default {
       item: null
     })
   },
+  beforeRouteUpdate (to, from, next) {
+    this.getItem(to.params.id)
+    next()
+  },
   created () {
-    this.getItem()
+    this.getItem(this.id)
   },
   methods: {
-    getItem () {
-      Service.getItem(this.id)
+    getItem (id) {
+      Service.getItem(id)
       .then(res => (
         res.json()
       ))
@@ -44,10 +48,6 @@ export default {
       })
     },
     histBack () {
-      this.$store.commit({
-        type: SET_CURRENT_ITEM,
-        item: null
-      })
       this.$router.push({name: 'home'})
     }
   }

@@ -18,7 +18,6 @@ export default new Vuex.Store({
       ]
     },
     setCurrentItem (state, item) {
-      console.log(item)
       state.currentItem = Object.assign({},
         state.currentItem, item)
     }

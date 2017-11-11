@@ -18,7 +18,9 @@ export default {
     }
   },
   created () {
-    this.getPopularItems()
+    if (this.items.length === 0) {
+      this.getPopularItems()
+    }
   },
   methods: {
     getPopularItems () {

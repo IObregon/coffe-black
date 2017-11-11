@@ -1,5 +1,5 @@
 <template>
-  <v-container grid-list-sm>
+  <v-container grid-list-lg>
     <v-layout fluid row wrap>
       <v-flex v-for="item in items" :key="item.id" xs4>
         <v-card :to="{ name: 'detail', params: { id: item.id } }">

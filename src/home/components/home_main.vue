@@ -1,5 +1,5 @@
 <template>
-  <grid :items="items"></grid>
+  <grid v-if="items.length > 0" :items="items"></grid>
 </template>
 
 <script>

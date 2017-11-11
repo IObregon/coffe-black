@@ -32,5 +32,13 @@ export default new Vuex.Store({
     [CLEAR_CURRENT_ITEM] (state) {
       state.currentItem = null
     }
+  },
+  getters: {
+    headlineItem (state) {
+      return state.popularItems.slice(0, 1)[0]
+    },
+    popularItems (state) {
+      return state.popularItems.slice(1, 19)
+    }
   }
 })

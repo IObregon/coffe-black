@@ -27,8 +27,8 @@ export default {
       .then(res => (
         res.json()
       ))
-      .then(json => {
-        this.$store.commit(SET_CURRENT_ITEM, json)
+      .then(item => {
+        this.$store.commit(SET_CURRENT_ITEM, item)
       })
     }
   }

@@ -1,5 +1,8 @@
 <template>
-  <profile v-if="item" :item="item"></profile>
+  <profile
+    v-if="item"
+    :item="item"
+    @histBack="histBack"></profile>
 </template>
 
 <script>
@@ -18,6 +21,12 @@ export default {
       return this.$store.state.currentItem
     }
   },
+  beforeCreate () {
+    this.$store.commit({
+      type: SET_CURRENT_ITEM,
+      item: null
+    })
+  },
   created () {
     this.getItem()
   },
@@ -33,6 +42,13 @@ export default {
           item: item
         })
       })
+    },
+    histBack () {
+      this.$store.commit({
+        type: SET_CURRENT_ITEM,
+        item: null
+      })
+      this.$router.push({name: 'home'})
     }
   }
 }

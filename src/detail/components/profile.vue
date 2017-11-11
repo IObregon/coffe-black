@@ -37,7 +37,7 @@ export default {
   props: ['item'],
   methods: {
     histBack () {
-      this.$router.push({name: 'home'})
+      this.$emit('histBack')
     }
   }
 }

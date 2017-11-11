@@ -5,7 +5,7 @@
 <script>
 import { LOAD_POPULAR_ITEMS } from '../../store/mutation-types.js'
 import Grid from './grid'
-import Service from '../services/home_service'
+import Service from '../service/home_service'
 
 export default {
   name: 'home',

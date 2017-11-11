@@ -1,5 +1,5 @@
 <template>
-  <profile :item="item"></profile>
+  <profile v-if="item" :item="item"></profile>
 </template>
 
 <script>

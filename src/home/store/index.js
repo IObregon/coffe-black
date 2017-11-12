@@ -1,4 +1,4 @@
-import { LOAD_POPULAR_ITEMS } from '../../store/mutation_types.js'
+import { LOAD_POPULAR_ITEMS } from './mutation_types'
 
 export default {
   state: {

@@ -9,7 +9,7 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import { SET_CURRENT_ITEM } from '../../store/mutation_types.js'
+import { SET_CURRENT_ITEM } from '../store/mutation_types'
 import DetailCard from './detail_card'
 import Service from '../service/detail_service'
 

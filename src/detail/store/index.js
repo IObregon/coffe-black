@@ -1,7 +1,7 @@
 import {
   SET_CURRENT_ITEM,
   CLEAR_CURRENT_ITEM
-} from '../../store/mutation_types.js'
+} from './mutation_types'
 
 export default {
   state: {

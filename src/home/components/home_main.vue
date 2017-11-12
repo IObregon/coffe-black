@@ -21,10 +21,9 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import {
-  LOAD_POPULAR_ITEMS,
-  CLEAR_CURRENT_ITEM
-} from '../../store/mutation_types.js'
+import { LOAD_POPULAR_ITEMS } from '../store/mutation_types'
+import { CLEAR_CURRENT_ITEM } from '../../detail/store/mutation_types'
+
 import GridList from './grid_list'
 import Service from '../service/home_service'
 

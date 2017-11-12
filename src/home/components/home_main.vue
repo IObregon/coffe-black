@@ -1,7 +1,7 @@
 <template>
   <v-layout row v-if="items.length > 0">
     <v-flex xs12>
-      <v-card>
+      <v-card :to="{ name: 'detail', params: { id: headlineItem.id } }">
         <v-card-media
           :src="`https://image.tmdb.org/t/p/w500${headlineItem.backdrop_path}`"
           height="320px">

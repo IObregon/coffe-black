@@ -9,9 +9,9 @@
       </v-card>
       <v-layout row>
         <v-flex xs12>
-          <grid
+          <grid-list
             :items="items">
-          </grid>
+          </grid-list>
         </v-flex>
       </v-layout>
     </v-flex>
@@ -25,13 +25,13 @@ import {
   LOAD_POPULAR_ITEMS,
   CLEAR_CURRENT_ITEM
 } from '../../store/mutation_types.js'
-import Grid from './grid'
+import GridList from './grid-list'
 import Service from '../service/home_service'
 
 export default {
-  name: 'home',
+  name: 'HomeMain',
   components: {
-    Grid
+    GridList
   },
   computed: {
     ...mapGetters({

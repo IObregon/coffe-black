@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: 'grid',
+  name: 'GridList',
   props: ['items']
 }
 </script>

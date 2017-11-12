@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Home from '../home/components/home_main'
-import Detail from '../detail/components/detail_main'
+import HomeMain from '../home/components/home_main'
+import DetailMain from '../detail/components/detail_main'
 
 Vue.use(Router)
 
@@ -11,12 +11,12 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: HomeMain
     },
     {
       path: '/:id',
       name: 'detail',
-      component: Detail,
+      component: DetailMain,
       props: true
     }
   ]

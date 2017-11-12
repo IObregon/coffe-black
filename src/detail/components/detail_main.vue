@@ -14,7 +14,7 @@ import DetailCard from './detail_card'
 import Service from '../service/detail_service'
 
 export default {
-  name: 'detail',
+  name: 'DetailMain',
   props: ['id'],
   components: {
     DetailCard

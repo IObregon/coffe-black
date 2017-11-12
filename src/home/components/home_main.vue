@@ -25,7 +25,7 @@ import {
   LOAD_POPULAR_ITEMS,
   CLEAR_CURRENT_ITEM
 } from '../../store/mutation_types.js'
-import GridList from './grid-list'
+import GridList from './grid_list'
 import Service from '../service/home_service'
 
 export default {

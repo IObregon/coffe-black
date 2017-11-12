@@ -22,8 +22,6 @@
 import { mapGetters } from 'vuex'
 
 import { LOAD_POPULAR_ITEMS } from '../store/mutation_types'
-import { CLEAR_CURRENT_ITEM } from '../../detail/store/mutation_types'
-
 import GridList from './grid_list'
 import Service from '../service/home_service'
 
@@ -38,14 +36,6 @@ export default {
       items: 'popularItems'
     })
   },
-  created () {
-    this.$store.commit({
-      type: CLEAR_CURRENT_ITEM
-    })
-    if (this.items.length === 0) {
-      this.getPopularItems()
-    }
-  },
   methods: {
     getPopularItems () {
       Service.getPopularItems()
@@ -58,6 +48,11 @@ export default {
           items: json.results
         })
       })
+    }
+  },
+  created () {
+    if (this.items.length === 0) {
+      this.getPopularItems()
     }
   }
 }

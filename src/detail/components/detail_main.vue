@@ -9,7 +9,10 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import { SET_CURRENT_ITEM } from '../store/mutation_types'
+import {
+  SET_CURRENT_ITEM,
+  CLEAR_CURRENT_ITEM
+} from '../store/mutation_types'
 import DetailCard from './detail_card'
 import Service from '../service/detail_service'
 
@@ -23,13 +26,6 @@ export default {
     ...mapGetters({
       currentItem: 'currentItem'
     })
-  },
-  beforeRouteUpdate (to, from, next) {
-    this.getItem(to.params.id)
-    next()
-  },
-  created () {
-    this.getItem(this.id)
   },
   methods: {
     getItem (id) {
@@ -47,6 +43,18 @@ export default {
     histBack () {
       this.$router.push({name: 'home'})
     }
+  },
+  created () {
+    this.getItem(this.id)
+  },
+  beforeRouteUpdate (to, from, next) {
+    this.getItem(to.params.id)
+    next()
+  },
+  beforeDestroy () {
+    this.$store.commit({
+      type: CLEAR_CURRENT_ITEM
+    })
   }
 }
 </script>

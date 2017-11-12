@@ -39,7 +39,7 @@
 
 <script>
 export default {
-  name: 'profile',
+  name: 'DetailCard',
   props: ['item'],
   methods: {
     histBack () {

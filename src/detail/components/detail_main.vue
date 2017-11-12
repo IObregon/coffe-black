@@ -1,22 +1,23 @@
 <template>
-  <profile
+  <detail-card
     v-if="currentItem"
     :item="currentItem"
-    @histBack="histBack"></profile>
+    @histBack="histBack">
+  </detail-card>
 </template>
 
 <script>
 import { mapState } from 'vuex'
 
 import { SET_CURRENT_ITEM } from '../../store/mutation_types.js'
-import Profile from './profile'
+import DetailCard from './detail_card'
 import Service from '../service/detail_service'
 
 export default {
   name: 'detail',
   props: ['id'],
   components: {
-    Profile
+    DetailCard
   },
   computed: mapState(['currentItem']),
   beforeRouteUpdate (to, from, next) {

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 
 import { SET_CURRENT_ITEM } from '../../store/mutation_types.js'
 import DetailCard from './detail_card'
@@ -19,7 +19,11 @@ export default {
   components: {
     DetailCard
   },
-  computed: mapState(['currentItem']),
+  computed: {
+    ...mapGetters({
+      currentItem: 'currentItem'
+    })
+  },
   beforeRouteUpdate (to, from, next) {
     this.getItem(to.params.id)
     next()

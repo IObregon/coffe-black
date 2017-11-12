@@ -24,7 +24,7 @@ import { mapGetters } from 'vuex'
 import {
   LOAD_POPULAR_ITEMS,
   CLEAR_CURRENT_ITEM
-} from '../../store/mutation-types.js'
+} from '../../store/mutation_types.js'
 import Grid from './grid'
 import Service from '../service/home_service'
 

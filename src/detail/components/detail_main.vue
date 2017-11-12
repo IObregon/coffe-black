@@ -8,7 +8,7 @@
 <script>
 import { mapState } from 'vuex'
 
-import { SET_CURRENT_ITEM } from '../../store/mutation-types.js'
+import { SET_CURRENT_ITEM } from '../../store/mutation_types.js'
 import Profile from './profile'
 import Service from '../service/detail_service'
 

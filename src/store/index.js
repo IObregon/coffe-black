@@ -5,7 +5,7 @@ import {
   LOAD_POPULAR_ITEMS,
   SET_CURRENT_ITEM,
   CLEAR_CURRENT_ITEM
-} from './mutation-types.js'
+} from './mutation_types.js'
 
 Vue.use(Vuex)
 

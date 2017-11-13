@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions, mapMutations, mapGetters } from 'vuex'
 
 import {
   CLEAR_CURRENT_ITEM
@@ -31,6 +31,9 @@ export default {
     },
     ...mapActions({
       getItem: 'getItem'
+    }),
+    ...mapMutations({
+      clearCurrentItem: CLEAR_CURRENT_ITEM
     })
   },
   created () {
@@ -41,9 +44,7 @@ export default {
     next()
   },
   beforeDestroy () {
-    this.$store.commit({
-      type: CLEAR_CURRENT_ITEM
-    })
+    this.clearCurrentItem()
   }
 }
 </script>

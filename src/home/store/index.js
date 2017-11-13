@@ -14,7 +14,7 @@ export default {
   },
   getters: {
     headlineItem (state) {
-      return state.popularItems.slice(0, 1)[0]
+      return state.popularItems[0]
     },
     popularItems (state) {
       return state.popularItems.slice(1, 19)

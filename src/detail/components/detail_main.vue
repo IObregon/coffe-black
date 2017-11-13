@@ -7,11 +7,9 @@
 </template>
 
 <script>
-import { mapActions, mapMutations, mapGetters } from 'vuex'
+import { mapState, mapActions, mapMutations } from 'vuex'
 
-import {
-  CLEAR_CURRENT_ITEM
-} from '../store/mutation_types'
+import { CLEAR_CURRENT_ITEM } from '../store/mutation_types'
 import DetailCard from './detail_card'
 
 export default {
@@ -21,8 +19,8 @@ export default {
     DetailCard
   },
   computed: {
-    ...mapGetters({
-      currentItem: 'currentItem'
+    ...mapState({
+      currentItem: state => state.detail.currentItem
     })
   },
   methods: {
@@ -39,12 +37,12 @@ export default {
   created () {
     this.getItem(this.id)
   },
+  beforeDestroy () {
+    this.clearCurrentItem()
+  },
   beforeRouteUpdate (to, from, next) {
     this.getItem(to.params.id)
     next()
-  },
-  beforeDestroy () {
-    this.clearCurrentItem()
   }
 }
 </script>

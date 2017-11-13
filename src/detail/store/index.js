@@ -32,10 +32,5 @@ export default {
         })
       })
     }
-  },
-  getters: {
-    currentItem (state) {
-      return state.currentItem
-    }
   }
 }

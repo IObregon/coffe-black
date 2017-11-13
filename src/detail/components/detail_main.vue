@@ -7,14 +7,12 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 import {
-  SET_CURRENT_ITEM,
   CLEAR_CURRENT_ITEM
 } from '../store/mutation_types'
 import DetailCard from './detail_card'
-import Service from '../service/detail_service'
 
 export default {
   name: 'DetailMain',
@@ -28,21 +26,12 @@ export default {
     })
   },
   methods: {
-    getItem (id) {
-      Service.getItem(id)
-      .then(res => (
-        res.json()
-      ))
-      .then(item => {
-        this.$store.commit({
-          type: SET_CURRENT_ITEM,
-          item: item
-        })
-      })
-    },
     histBack () {
       this.$router.push({name: 'home'})
-    }
+    },
+    ...mapActions({
+      getItem: 'getItem'
+    })
   },
   created () {
     this.getItem(this.id)

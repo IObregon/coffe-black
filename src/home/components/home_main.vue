@@ -19,11 +19,9 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
-import { LOAD_POPULAR_ITEMS } from '../store/mutation_types'
 import GridList from './grid_list'
-import Service from '../service/home_service'
 
 export default {
   name: 'HomeMain',
@@ -37,18 +35,9 @@ export default {
     })
   },
   methods: {
-    getPopularItems () {
-      Service.getPopularItems()
-      .then(res => (
-        res.json()
-      ))
-      .then(json => {
-        this.$store.commit({
-          type: LOAD_POPULAR_ITEMS,
-          items: json.results
-        })
-      })
-    }
+    ...mapActions({
+      getPopularItems: 'getPopularItems'
+    })
   },
   created () {
     if (this.items.length === 0) {

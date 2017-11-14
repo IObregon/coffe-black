@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import { SHOW_PROGRESS } from './mutation_types'
 import HomeStore from '../home/store'
 import DetailStore from '../detail/store'
 
@@ -11,7 +12,7 @@ export default new Vuex.Store({
     showProgress: false
   },
   mutations: {
-    showProgress (state, payload) {
+    [SHOW_PROGRESS] (state, payload) {
       state.showProgress = payload.display
     }
   },

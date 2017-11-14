@@ -9,7 +9,7 @@
 <script>
 import { mapState, mapActions, mapMutations } from 'vuex'
 
-import { CLEAR_CURRENT_ITEM } from '../store/mutation_types'
+import { CLEAR_CURRENT_ITEM } from '../../store/mutation_types'
 import DetailCard from './detail_card'
 
 export default {

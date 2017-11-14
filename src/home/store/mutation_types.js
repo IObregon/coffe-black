@@ -1,1 +1,0 @@
-export const LOAD_POPULAR_ITEMS = 'LOAD_POPULAR_ITEMS'

@@ -1,7 +1,8 @@
 import {
   SET_CURRENT_ITEM,
-  CLEAR_CURRENT_ITEM
-} from './mutation_types'
+  CLEAR_CURRENT_ITEM,
+  SHOW_PROGRESS
+} from '../../store/mutation_types'
 import Service from '../service/detail_service'
 
 export default {
@@ -22,7 +23,7 @@ export default {
   actions: {
     getItem (context, id) {
       context.commit({
-        type: 'showProgress',
+        type: SHOW_PROGRESS,
         dislay: true
       })
       Service.getItem(id)
@@ -31,7 +32,7 @@ export default {
       ))
       .then(item => {
         context.commit({
-          type: 'showProgress',
+          type: SHOW_PROGRESS,
           dislay: false
         })
         context.commit({

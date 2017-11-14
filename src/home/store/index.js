@@ -1,4 +1,7 @@
-import { LOAD_POPULAR_ITEMS } from './mutation_types'
+import {
+  LOAD_POPULAR_ITEMS,
+  SHOW_PROGRESS
+} from '../../store/mutation_types'
 import Service from '../service/home_service'
 
 export default {
@@ -16,7 +19,7 @@ export default {
   actions: {
     getPopularItems (context) {
       context.commit({
-        type: 'showProgress',
+        type: SHOW_PROGRESS,
         dislay: true
       })
       Service.getPopularItems()
@@ -25,7 +28,7 @@ export default {
       ))
       .then(json => {
         context.commit({
-          type: 'showProgress',
+          type: SHOW_PROGRESS,
           dislay: false
         })
         context.commit({

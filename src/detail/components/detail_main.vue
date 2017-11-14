@@ -10,6 +10,7 @@
 import { mapState, mapActions, mapMutations } from 'vuex'
 
 import { CLEAR_CURRENT_ITEM } from '../../store/mutation_types'
+import { GET_ITEM_DETAIL } from '../store/action_types'
 import DetailCard from './detail_card'
 
 export default {
@@ -27,21 +28,17 @@ export default {
     histBack () {
       this.$router.push({name: 'home'})
     },
-    ...mapActions({
-      getItem: 'getItem'
-    }),
-    ...mapMutations({
-      clearCurrentItem: CLEAR_CURRENT_ITEM
-    })
+    ...mapActions([ GET_ITEM_DETAIL ]),
+    ...mapMutations([ CLEAR_CURRENT_ITEM ])
   },
   created () {
-    this.getItem(this.id)
+    this[GET_ITEM_DETAIL](this.id)
   },
   beforeDestroy () {
-    this.clearCurrentItem()
+    this[CLEAR_CURRENT_ITEM]()
   },
   beforeRouteUpdate (to, from, next) {
-    this.getItem(to.params.id)
+    this[GET_ITEM_DETAIL](to.params.id)
     next()
   }
 }

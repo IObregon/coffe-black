@@ -2,10 +2,12 @@ import {
   SET_CURRENT_ITEM,
   SHOW_PROGRESS
 } from '../../store/mutation_types'
+import { GET_ITEM_DETAIL } from './action_types'
+
 import Service from '../service/detail_service'
 
 export default {
-  getItem (context, id) {
+  [GET_ITEM_DETAIL] (context, id) {
     context.commit({
       type: SHOW_PROGRESS,
       dislay: true

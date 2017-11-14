@@ -2,10 +2,12 @@ import {
   LOAD_POPULAR_ITEMS,
   SHOW_PROGRESS
 } from '../../store/mutation_types'
+import { GET_POPULAR_ITEMS } from './action_types'
+
 import Service from '../service/home_service'
 
 export default {
-  getPopularItems (context) {
+  [GET_POPULAR_ITEMS] (context) {
     context.commit({
       type: SHOW_PROGRESS,
       dislay: true

@@ -1,5 +1,5 @@
 <template>
-  <v-layout row v-if="items.length > 0">
+  <v-layout row v-if="popularItems.length > 0">
     <v-flex xs12>
       <v-card :to="{ name: 'detail', params: { id: headlineItem.id } }">
         <v-card-media
@@ -10,7 +10,7 @@
       <v-layout row>
         <v-flex xs12>
           <grid-list
-            :items="items">
+            :items="popularItems">
           </grid-list>
         </v-flex>
       </v-layout>
@@ -20,6 +20,7 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import { GET_POPULAR_ITEMS } from '../store/action_types'
 
 import GridList from './grid_list'
 
@@ -29,19 +30,19 @@ export default {
     GridList
   },
   computed: {
-    ...mapGetters({
-      headlineItem: 'headlineItem',
-      items: 'popularItems'
-    })
+    ...mapGetters([
+      'headlineItem',
+      'popularItems'
+    ])
   },
   methods: {
-    ...mapActions({
-      getPopularItems: 'getPopularItems'
-    })
+    ...mapActions([
+      GET_POPULAR_ITEMS
+    ])
   },
   created () {
-    if (this.items.length === 0) {
-      this.getPopularItems()
+    if (this.popularItems.length === 0) {
+      this[GET_POPULAR_ITEMS]()
     }
   }
 }

@@ -1,0 +1,1 @@
+export const GET_POPULAR_ITEMS = 'GET_POPULAR_ITEMS'

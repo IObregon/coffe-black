@@ -15,11 +15,17 @@ export default {
   },
   actions: {
     getPopularItems (context) {
+      context.commit({
+        type: 'fetchingDataOn'
+      })
       Service.getPopularItems()
       .then(res => (
         res.json()
       ))
       .then(json => {
+        context.commit({
+          type: 'fetchingDataOff'
+        })
         context.commit({
           type: LOAD_POPULAR_ITEMS,
           items: json.results

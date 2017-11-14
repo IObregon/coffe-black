@@ -21,11 +21,17 @@ export default {
   },
   actions: {
     getItem (context, id) {
+      context.commit({
+        type: 'fetchingDataOn'
+      })
       Service.getItem(id)
       .then(res => (
         res.json()
       ))
       .then(item => {
+        context.commit({
+          type: 'fetchingDataOff'
+        })
         context.commit({
           type: SET_CURRENT_ITEM,
           item: item

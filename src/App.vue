@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-container v-if="fetchingData" fill-height align-center>
+    <v-container v-if="showProgress" fill-height align-center>
        <v-layout justify-center align-center>
          <v-progress-circular indeterminate color="red darken-2"></v-progress-circular>
        </v-layout>
@@ -15,7 +15,7 @@ import { mapState } from 'vuex'
 export default {
   name: 'App',
   computed: {
-    ...mapState(['fetchingData'])
+    ...mapState(['showProgress'])
   }
 }
 </script>

@@ -22,7 +22,8 @@ export default {
   actions: {
     getItem (context, id) {
       context.commit({
-        type: 'fetchingDataOn'
+        type: 'showProgress',
+        dislay: true
       })
       Service.getItem(id)
       .then(res => (
@@ -30,7 +31,8 @@ export default {
       ))
       .then(item => {
         context.commit({
-          type: 'fetchingDataOff'
+          type: 'showProgress',
+          dislay: false
         })
         context.commit({
           type: SET_CURRENT_ITEM,

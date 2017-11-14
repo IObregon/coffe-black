@@ -16,7 +16,8 @@ export default {
   actions: {
     getPopularItems (context) {
       context.commit({
-        type: 'fetchingDataOn'
+        type: 'showProgress',
+        dislay: true
       })
       Service.getPopularItems()
       .then(res => (
@@ -24,7 +25,8 @@ export default {
       ))
       .then(json => {
         context.commit({
-          type: 'fetchingDataOff'
+          type: 'showProgress',
+          dislay: false
         })
         context.commit({
           type: LOAD_POPULAR_ITEMS,

@@ -8,14 +8,11 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    fetchingData: false
+    showProgress: false
   },
   mutations: {
-    fetchingDataOn (state) {
-      state.fetchingData = true
-    },
-    fetchingDataOff (state) {
-      state.fetchingData = false
+    showProgress (state, payload) {
+      state.showProgress = payload.display
     }
   },
   modules: {

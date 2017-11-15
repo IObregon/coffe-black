@@ -4,7 +4,7 @@ import {
 } from '../../store/mutation_types'
 import { GET_ITEM_DETAIL } from './action_types'
 
-import Service from '../service/detail_service'
+import Service from '../../service'
 
 export default {
   [GET_ITEM_DETAIL] (context, id) {

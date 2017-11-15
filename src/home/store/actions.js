@@ -4,7 +4,7 @@ import {
 } from '../../store/mutation_types'
 import { GET_POPULAR_ITEMS } from './action_types'
 
-import Service from '../service/home_service'
+import Service from '../../service'
 
 export default {
   [GET_POPULAR_ITEMS] (context) {

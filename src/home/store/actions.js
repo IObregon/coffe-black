@@ -7,8 +7,8 @@ import { GET_POPULAR_ITEMS } from './action_types'
 import Service from '../../service'
 
 export default {
-  [GET_POPULAR_ITEMS] (context) {
-    context.commit({
+  [GET_POPULAR_ITEMS] ({commit}) {
+    commit({
       type: SHOW_PROGRESS,
       display: true
     })
@@ -17,11 +17,11 @@ export default {
       res.json()
     ))
     .then(json => {
-      context.commit({
+      commit({
         type: SHOW_PROGRESS,
         display: false
       })
-      context.commit({
+      commit({
         type: LOAD_POPULAR_ITEMS,
         items: json.results
       })

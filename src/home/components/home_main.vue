@@ -1,13 +1,10 @@
 <template>
-  <v-layout row v-if="popularItems.length > 0">
+  <v-layout row>
     <v-flex xs12>
-      <v-card :to="{ name: 'detail', params: { id: headlineItem.id } }">
-        <v-card-media
-          :src="`https://image.tmdb.org/t/p/w500${headlineItem.backdrop_path}`"
-          height="320px">
-        </v-card-media>
-      </v-card>
-      <v-layout row>
+      <head-line
+        v-if="headlineItem"
+        :item="headlineItem"></head-line>
+      <v-layout row v-if="popularItems.length > 0">
         <v-flex xs12>
           <grid-list
             :items="popularItems">
@@ -22,12 +19,13 @@
 import { mapActions, mapGetters } from 'vuex'
 import { GET_POPULAR_ITEMS } from '../store/action_types'
 
+import HeadLine from './head_line'
 import GridList from './grid_list'
 
 export default {
   name: 'HomeMain',
   components: {
-    GridList
+    HeadLine, GridList
   },
   computed: {
     ...mapGetters([

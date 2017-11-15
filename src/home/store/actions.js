@@ -10,7 +10,7 @@ export default {
   [GET_POPULAR_ITEMS] (context) {
     context.commit({
       type: SHOW_PROGRESS,
-      dislay: true
+      display: true
     })
     Service.getPopularItems()
     .then(res => (
@@ -19,7 +19,7 @@ export default {
     .then(json => {
       context.commit({
         type: SHOW_PROGRESS,
-        dislay: false
+        display: false
       })
       context.commit({
         type: LOAD_POPULAR_ITEMS,

@@ -10,7 +10,7 @@ export default {
   [GET_ITEM_DETAIL] (context, id) {
     context.commit({
       type: SHOW_PROGRESS,
-      dislay: true
+      display: true
     })
     Service.getItem(id)
     .then(res => (
@@ -19,7 +19,7 @@ export default {
     .then(item => {
       context.commit({
         type: SHOW_PROGRESS,
-        dislay: false
+        display: false
       })
       context.commit({
         type: SET_CURRENT_ITEM,

@@ -7,8 +7,8 @@ import { GET_ITEM_DETAIL } from './action_types'
 import Service from '../service/detail_service'
 
 export default {
-  [GET_ITEM_DETAIL] (context, id) {
-    context.commit({
+  [GET_ITEM_DETAIL] ({commit}, id) {
+    commit({
       type: SHOW_PROGRESS,
       dislay: true
     })
@@ -17,11 +17,11 @@ export default {
       res.json()
     ))
     .then(item => {
-      context.commit({
+      commit({
         type: SHOW_PROGRESS,
         dislay: false
       })
-      context.commit({
+      commit({
         type: SET_CURRENT_ITEM,
         item: item
       })

@@ -1,19 +1,19 @@
 import {
   LOAD_POPULAR_ITEMS,
-  DISPLAY_PROGRESS_INDICATOR
+  DISPLAY_PROGRESS_INDICATOR,
+  NEXT_PAGE_NUMBER
 } from '../../store/mutation_types'
 import { GET_POPULAR_ITEMS } from './action_types'
 
 import Service from '../../service'
 
 export default {
-  [GET_POPULAR_ITEMS] ({ commit }, page = 1) {
-    console.log('GET_POPULAR_ITEMS', page)
+  [GET_POPULAR_ITEMS] ({ commit, state }) {
     commit({
       type: DISPLAY_PROGRESS_INDICATOR,
       display: true
     })
-    Service.getPopularItems(page)
+    Service.getPopularItems(state.currentPageNumber)
     .then(res => (
       res.json()
     ))
@@ -21,6 +21,9 @@ export default {
       commit({
         type: DISPLAY_PROGRESS_INDICATOR,
         display: false
+      })
+      commit({
+        type: NEXT_PAGE_NUMBER
       })
       commit({
         type: LOAD_POPULAR_ITEMS,

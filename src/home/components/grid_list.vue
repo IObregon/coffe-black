@@ -33,14 +33,13 @@ export default {
   props: ['items'],
   data () {
     return {
-      busy: false,
-      page: 1
+      busy: false
     }
   },
   methods: {
     loadMore () {
       this.busy = true
-      this.$emit('loadMoreItems', ++this.page)
+      this.$emit('loadMoreItems')
     }
   },
   updated () {

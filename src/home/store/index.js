@@ -4,7 +4,8 @@ import getters from './getters'
 
 export default {
   state: {
-    popularItems: []
+    popularItems: [],
+    currentPageNumber: 1
   },
   mutations: mutations,
   actions: actions,

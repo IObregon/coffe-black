@@ -1,12 +1,10 @@
 <template>
   <section>
-    <head-line
-      v-if="headlineItem"
-      :item="headlineItem"></head-line>
     <v-layout row v-if="popularItems.length > 0">
       <v-flex xs12>
         <grid-list
-          :items="popularItems">
+          :items="popularItems"
+          @loadMoreItems="GET_POPULAR_ITEMS">
         </grid-list>
       </v-flex>
     </v-layout>

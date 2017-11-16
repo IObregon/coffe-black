@@ -7,12 +7,13 @@ import { GET_POPULAR_ITEMS } from './action_types'
 import Service from '../../service'
 
 export default {
-  [GET_POPULAR_ITEMS] ({commit}) {
+  [GET_POPULAR_ITEMS] ({ commit }, page = 1) {
+    console.log('GET_POPULAR_ITEMS', page)
     commit({
       type: SHOW_PROGRESS,
       display: true
     })
-    Service.getPopularItems()
+    Service.getPopularItems(page)
     .then(res => (
       res.json()
     ))

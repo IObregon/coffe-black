@@ -3,6 +3,6 @@ export default {
     return state.popularItems[0]
   },
   popularItems (state) {
-    return state.popularItems.slice(1, 19)
+    return state.popularItems
   }
 }

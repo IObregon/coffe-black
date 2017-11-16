@@ -42,4 +42,16 @@ describe(LOAD_POPULAR_ITEMS, () => {
       expect(state.popularItems[i]).to.equal(items[i])
     }
   })
+
+  it('when there is an state with items, it is not modified but created a new one', () => {
+    const popularItems = [1,2,3]
+    const state = {
+      popularItems: popularItems
+    }
+    const items = [4, 5, 6]
+    loadPopularItems(state, {
+      items: items
+    })
+    expect(popularItems == state.popularItems).not.to.be.true
+  })
 })

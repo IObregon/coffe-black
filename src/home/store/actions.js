@@ -1,6 +1,6 @@
 import {
   LOAD_POPULAR_ITEMS,
-  SHOW_PROGRESS
+  DISPLAY_PROGRESS_INDICATOR
 } from '../../store/mutation_types'
 import { GET_POPULAR_ITEMS } from './action_types'
 
@@ -9,7 +9,7 @@ import Service from '../../service'
 export default {
   [GET_POPULAR_ITEMS] ({commit}) {
     commit({
-      type: SHOW_PROGRESS,
+      type: DISPLAY_PROGRESS_INDICATOR,
       display: true
     })
     Service.getPopularItems()
@@ -18,7 +18,7 @@ export default {
     ))
     .then(json => {
       commit({
-        type: SHOW_PROGRESS,
+        type: DISPLAY_PROGRESS_INDICATOR,
         display: false
       })
       commit({

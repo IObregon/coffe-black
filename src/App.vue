@@ -1,6 +1,8 @@
 <template>
   <v-app dark>
-    <progress-indicator :display="showProgress"></progress-indicator>
+    <progress-indicator
+      :display="displayingProgressIndicator">
+    </progress-indicator>
     <router-view></router-view>
   </v-app>
 </template>
@@ -16,7 +18,7 @@ export default {
     ProgressIndicator
   },
   computed: {
-    ...mapState(['showProgress'])
+    ...mapState(['displayingProgressIndicator'])
   }
 }
 </script>

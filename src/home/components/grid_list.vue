@@ -16,12 +16,35 @@
         </v-card>
       </v-flex>
     </v-layout>
+    <v-progress-linear
+      :indeterminate="true"
+      color="red darken-2"
+      height="4"
+      v-infinite-scroll="loadMore"
+      infinite-scroll-disabled="busy"
+      infinite-scroll-distance="10">
+    </v-progress-linear>
   </v-container>
 </template>
 
 <script>
 export default {
   name: 'GridList',
-  props: ['items']
+  props: ['items'],
+  data () {
+    return {
+      busy: false,
+      page: 1
+    }
+  },
+  methods: {
+    loadMore () {
+      this.busy = true
+      this.$emit('loadMoreItems', ++this.page)
+    }
+  },
+  updated () {
+    this.busy = false
+  }
 }
 </script>
